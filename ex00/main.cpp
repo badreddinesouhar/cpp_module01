@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 23:45:05 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/08/27 04:15:36 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/08/27 04:39:12 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main() {
     Zmb.announce();
 
     Zombie instantZm;
-    Zombie* newZomb = instantZm.newZombie("badr");
+    Zombie* newZomb =  instantZm.newZombie("badr");
     newZomb->announce();
 
     Zombie chmp;
