@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 07:02:30 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/08/27 19:03:58 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/08/28 22:23:45 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,23 @@
 //               << B.bWeapon.getType() << std::endl;
 // }
 
-int main()
-{
-{
-Weapon club = Weapon("crude spiked club");
-HumanA bob("Bob", club);
-bob.attack();
-club.setType("some other type of club");
-bob.attack();
-}
-{
-Weapon club = Weapon("crude spiked club");
-HumanB jim("Jim");
-jim.setWeapon(club);
-jim.attack();
-club.setType("some other type of club");
-jim.attack();
-}
-return 0;
+int main() {
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanA bob("Bob", &club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+        club.setType("gun");
+        bob.attack();
+    }
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
+    return 0;
 }
