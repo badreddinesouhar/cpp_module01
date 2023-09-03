@@ -6,32 +6,27 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:27:20 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/08/30 14:55:16 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/09/03 14:50:52 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
 void Harl::complain(std::string level) {
-    Harl harl;
-    void (Harl::* functionPointers[4])(void) = {
-        &Harl::debug,
-        &Harl::info,
-        &Harl::warning,
-        &Harl::error
-    };
-
-    std::map<std::string, int> levelToIndex;
-    levelToIndex["debug"] = 0;
-    levelToIndex["info"] = 1;
-    levelToIndex["warning"] = 2;
-    levelToIndex["error"] = 3;
-
-    std::map<std::string, int>::iterator it = levelToIndex.find(level);
-    while (it != levelToIndex.end()) {
-        int index = it->second;
-        (harl.*functionPointers[index])();
-        break;
+    
+    void (Harl::*p1)() = &Harl::debug;
+    void (Harl::*p2)() = &Harl::info;
+    void (Harl::*p3)() = &Harl::warning;
+    void (Harl::*p4)() = &Harl::error;
+    
+    void (Harl::*ptrComplain[4])() = {p1, p2, p3, p4};
+    std::string levelStrings[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    
+    for (int i = 0; i < 4; i++) {
+        if (level == levelStrings[i]) {
+            (this->*ptrComplain[i])();
+            break;
+        }
     }
 }
-
+    
