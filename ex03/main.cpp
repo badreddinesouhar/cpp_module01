@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 07:02:30 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/08/28 22:23:45 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/09/09 15:10:39 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,12 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
-// int main() {
-//     HumanA A;
-//     HumanB B;
-
-//     A.setName("badr");
-//     B.setName("anass");
-//     B.bWeapon.setType("knife");
-
-//     std::cout << A.getName()
-//               << " attacks with their "
-//               << A.aWeapon.getType() << std::endl;
-
-//     std::cout << B.getName()
-//               << " attacks with their "
-//               << B.bWeapon.getType() << std::endl;
-// }
-
 int main() {
     {
         Weapon club = Weapon("crude spiked club");
-        HumanA bob("Bob", &club);
+        HumanA bob("Bob", club);
         bob.attack();
         club.setType("some other type of club");
-        bob.attack();
-        club.setType("gun");
         bob.attack();
     }
     {
