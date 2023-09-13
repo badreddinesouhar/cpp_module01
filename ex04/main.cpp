@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 22:29:45 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/08/30 12:20:55 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/09/11 07:17:16 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main(int argc, char **argv) {
     if (argc < 4) {
-        std::cout << "input invalide" << std::endl;
+        std::cout << "invalid input" << std::endl;
     }
 
     if (argc == 4) {
