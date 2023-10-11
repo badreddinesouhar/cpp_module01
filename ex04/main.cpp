@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 22:29:45 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/10/11 09:36:19 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/10/11 10:19:23 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ std::string my_replace(std::string line, std::string search, std::string replace
     int len = search.length();
 
     while (pos != std::string::npos) {
-        std::cout << pos << std::endl;
-        std::cout << std::string::npos << std::endl; 
         line.erase(pos, len);
         line.insert(pos, replace);
         pos = line.find(search, pos + replace.length());
@@ -28,7 +26,7 @@ std::string my_replace(std::string line, std::string search, std::string replace
 }
 
 int main(int argc, char **argv) {
-    if (argc < 4 || argc > 4) {
+    if (argc != 4) {
         std::cout << "invalid arguments" << std::endl;
     }
     if (argc == 4) {
@@ -41,8 +39,7 @@ int main(int argc, char **argv) {
         s1 = argv[2];
         s2 = argv[3];
         file.open(argv[1]);
-        if (!file)
-        {
+        if (!file) {
             std::cout << "file doesn't exist" << std::endl;
             return(1);
         }

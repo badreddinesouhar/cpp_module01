@@ -1,7 +1,11 @@
 NAME = BraiiiiiiinnnzzzZ
 
 SRC = main.cpp Zombie.cpp zombieHorde.cpp
-OBJ = $(SRC:.cpp=.o)
+HDF = Zombie.hpp
+OBJ = $(SRC:.cpp=.o )
+
+%.o: %.cpp $(HDF)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g -std=c++98

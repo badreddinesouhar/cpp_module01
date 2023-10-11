@@ -1,7 +1,11 @@
 NAME = Harl
 
 SRC = main.cpp Harl.cpp
-OBJ = $(SRC:.cpp=.o)
+HDF = Harl.hpp
+OBJ = $(SRC:.cpp=.o )
+
+%.o: %.cpp $(HDF)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g -std=c++98
