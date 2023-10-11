@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 23:45:15 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/09/10 11:44:59 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/10/10 16:56:18 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void Zombie::setName (std::string name) {
 }
 
 void Zombie::announce() {
-    std::cout << _name << " Braiiiinz..." << std::endl;
+    std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 Zombie::~Zombie() {

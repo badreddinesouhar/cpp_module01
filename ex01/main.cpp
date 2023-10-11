@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 23:45:05 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/09/13 10:14:22 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/10/10 16:54:14 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ int main() {
     for (int i = 0; i < N; ++i) {
         horde[i].announce();
     }
+    delete[] horde;
 }
